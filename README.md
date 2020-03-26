@@ -19,6 +19,19 @@ Este ejercicio al igual que el anterior no me parecio muy complejo y el tiempo q
 
 # Ejercicio 4
 
-Para resolver este ejercicio creo un arreglo llamado <b>  </b>
+Para resolver este ejercicio cree un arreglo llamado <b>duplicados</b> para guardar las posiciones de los valores que se repiten, esto lo hago anidando dos ciclos for en el primero itero el arreglo recibido y en el segundo itero a partir de la posición del primer ciclo en cada iteración compara si el valor de la posición del primer ciclo es igual al valor de la posición que se esta iterando en el segundo ciclo, si se cumple esta condición agrega el valor al arreglo <b>duplicados</b>, al terminar de iterar en el arreglo <b>duplicados</b> tenemos todas las posiciones de los números duplicados lo que hago es ordenarlo de mayor a menor para despues iterarlo  e ir borrando del array recibido los numeros repetidos.
 
-Este ejercicio al igual que el anterior no me parecio muy complejo y el tiempo que me llevo para plantear como solucionarlo fue relativamente rapido.
+Este ejercicio me parecio de una complejidad mayor asi como me implico un mayor tiempo poder realizarlo, ya que tuve un problema al eliminar los duplicados del array original se recorria y no obtenia el resultado esperado, esto lo solucione ordenando el arreglo <b>duplicados</b> de mayor a menor para que al ir eliminando no recorriera las posciones del arreglo original, hubiera sido mas sencillo utilizar set o filtros pero decidí usar mas mi logica.
+
+
+# Ejercicio 5
+
+Para resolver este ejercicio primero valido que el residuo de la división entre 2 de la longitud de la cadena recibida de como resultado 0, si no se cumple regresa <b>false</b> con eso compruebo que minimo al comenzar a evaluar si esta balanceada existe el mismo número de caracteres tanto a la izquierda como a la derecha, si pasa la validación entonces itero la primer mitad de la cadena para obtener los caracteres del lado izquierdo, en cada iteración obtengo el caracter utilizando substring donde el 1er parametro es el numero de iteración y el 2do parametro es el numero de iteracion mas 1 , mediante un switch valido el tipo de caracter este tiene que ser un parentesis o un corchete de apertura de lo contrario enviara un error 'caracter incorrecto', si es de alguno de los dos tipos busca el caracter al final de cadena igualmente utilizando substring donde el 1er parametro es la longitud de la cadena menos el numero de iteracion menos 1 y el 2do es la longitud de la cadena menos 1, el valor de ese caracter debe ser un parentesis o un corchete de cierre segun sea el caso si no es asi regresa un <b>false</b>, si cada parentesis de apertura tiene su parentesis de cierre regresa <b>true</b>
+
+Este ejercicio me parecio complicado al principio pero conforme lo fui realizando me di cuenta que no era tan complejo y fue relativamente rapido llevarlo a cabo.
+
+# Ejercicio 6
+
+Para resolver este ejercicio tome en cuenta que recibo un arreglo de objectos donde cada objeto tiene dos propiedades que son inicio y fin los cuales utilizo para poner la hora de inicio y termino de cada clase, luego utilizo una variable llamada <b>salones</b> que inicializo con el numero total de clases es decir como si hubiera un salon por cada clase, tambien creo un arreglo auxiliar identico al arreglo recibido <b>(clasesAux)</b> y una variable llamada <b>libres</b> que sera un contador para saber cuantos salones se han desocupado, despues utilizo dos ciclos for anidados en el primero itero el array recibido y saco la hora del inico de la clase despues en el 2do for itero de 0 a el numero de iteración del 1er ciclo para saber si existen clases previas y comparo el horario de inicio de la clase con el horario de fin de la clase anterior que se este iterando, si encuntra una clase que ya termino entonces resta 1 a la variable <b>salones</b> e incrementa 1 a la variable <b>libres</b> y remueve del arreglo <b>clasesAux</b> la posicion de la clase que ya termino con esto es como si el salon ya estuviera libre y pudiera ser ocupado con la siguiente clase, al termino de la iteración en la variable salones queda el numero total de salones necesarios.
+
+Este ejercicio fue el de mayor complejidad y donde tuve que pensar e invertir mas tiempo ya que no a la primera obtuve el resultado y tuve que realizar varias modificaciones hasta lograrlo.
